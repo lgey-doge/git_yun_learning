@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个部署页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* 背景漂浮的光斑 */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.5;
+            animation: float 12s ease-in-out infinite;
+        }
+        .blob-1 { width: 320px; height: 320px; background: #f093fb; top: -80px; left: -60px; }
+        .blob-2 { width: 260px; height: 260px; background: #4facfe; bottom: -60px; right: -40px; animation-delay: -4s; }
+        .blob-3 { width: 200px; height: 200px; background: #43e97b; top: 50%; right: 20%; animation-delay: -8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33%      { transform: translate(30px, -40px) scale(1.1); }
+            66%      { transform: translate(-20px, 20px) scale(0.95); }
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            padding: 56px 48px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 24px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            max-width: 90vw;
+            animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+        }
+
+        h1 {
+            font-size: clamp(24px, 5vw, 40px);
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.4;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+
+        .footer {
+            margin-top: 28px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <main class="card">
+        <span class="badge">🚀 DEPLOYED</span>
+        <h1>这是我的第一个<br>部署到服务器上的页面</h1>
+        <p>从开发到部署，再到持续优化，<br>一切从这里开始。</p>
+        <div class="footer">Powered by 云学习 · 2026</div>
+    </main>
+</body>
+</html>
