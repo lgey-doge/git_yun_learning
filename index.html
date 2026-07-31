@@ -87,6 +87,36 @@
             line-height: 1.7;
         }
 
+        .welcome {
+            margin-top: 20px;
+            font-size: 17px;
+            font-weight: 600;
+            color: #fff;
+            min-height: 29px;
+        }
+
+        .btn {
+            margin-top: 24px;
+            padding: 12px 32px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 999px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
         .footer {
             margin-top: 28px;
             font-size: 13px;
@@ -103,7 +133,27 @@
         <span class="badge">🚀 DEPLOYED</span>
         <h1>这是我的第一个<br>部署到服务器上的页面</h1>
         <p>从开发到部署，再到持续优化，<br>一切从这里开始。</p>
+        <div class="welcome" id="welcome">👋 欢迎来到我的云学习小站！</div>
+        <button class="btn" id="greetBtn" type="button">点我一下</button>
         <div class="footer">Powered by 云学习 · 2026</div>
     </main>
+
+    <script>
+        const messages = [
+            '🎉 你好呀，很高兴见到你！',
+            '🌱 学习是一件慢慢变好的事。',
+            '🚀 今天也要继续加油哦！',
+            '💡 保持好奇，保持热爱。',
+            '☕ 累了就休息一下吧。'
+        ];
+
+        let index = 0;
+        const welcome = document.getElementById('welcome');
+
+        document.getElementById('greetBtn').addEventListener('click', () => {
+            welcome.textContent = messages[index];
+            index = (index + 1) % messages.length;
+        });
+    </script>
 </body>
 </html>

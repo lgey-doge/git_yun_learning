@@ -5,3 +5,4 @@
 # 2026/7/31
 1.将文件push到GitHub上，并且保存 诶就是玩
 2.下载GitHub Desktop，并且尝试使用它push代码到仓库中；创建.gitnore
+3。为前端页面添加欢迎语和按钮，尝试使用git和github把网页部署到服务器上
